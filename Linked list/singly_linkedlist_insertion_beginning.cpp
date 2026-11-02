@@ -22,20 +22,39 @@ int main()
     head->next->next->next = new Node(10);
     head->next->next->next->next = new Node(10);
 
+    // Display before insertion
+    Node* temp = head;
+
+    cout << "Before insertion: ";
+
+    while (temp != nullptr)
+    {
+        cout << temp->info << " ";
+        temp = temp->next;
+    }
+
+    cout << endl;
+
+    // Insertion at beginning
     int n;
-    cout<<"Enter Node to insert: ";
-    cin>>n;
+    cout << "Enter Node to insert at beginning: ";
+    cin >> n;
+
     Node* NEW = new Node(n);
 
     NEW->next = head;
     head = NEW;
 
-    Node* temp = head;
+    // Display after insertion
+    temp = head;
+
+    cout << "After insertion: ";
 
     while (temp != nullptr)
     {
         cout << temp->info << " ";
-
         temp = temp->next;
     }
+
+    return 0;
 }
